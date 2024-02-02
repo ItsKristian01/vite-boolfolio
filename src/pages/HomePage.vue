@@ -13,8 +13,7 @@ export default {
       // console.log(resp);
       this.projects = resp.data.result;
     })
-  },
-  components: { ProjectCard}
+  }
 }
 </script>
 
