@@ -18,19 +18,21 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <h2 class="text-center mt-2">List of all Projects</h2>
-        <div class="row row-cols-3 p-3 g-4">
-            <div v-for="project in projects" :key="project.id">
-                <div class="card h-100 p-2">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h2 class="text-center mt-2">List of all Projects</h2>
+    <div class="row row-cols-3 p-3 g-4">
+      <div v-for="project in projects" :key="project.id">
+        <div class="card h-100 p-2">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            
+            <router-link :to="{ name: 'project', params: { slug: project.slug } }">Project Details</router-link>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
